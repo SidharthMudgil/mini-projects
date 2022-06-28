@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Hiker App</string>
+    <string name="longitude">Longitude</string>
+    <string name="activity_tracker">Activity Tracker</string>
+    <string name="accuracy">Accuracy</string>
+    <string name="altitude">Altitude</string>
+    <string name="address">Address</string>
+    <string name="latitude">Latitude</string>
+    <string name="_00_00">00.00</string>
+    <string name="_00">00</string>
+    <string name="nil">Nil</string>
+</resources>

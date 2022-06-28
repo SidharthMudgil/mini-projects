@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/drawable/chat_bubble.xml" value="0.2155" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/drawable/circle_bg.xml" value="0.240625" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/drawable/martial_arts.xml" value="0.240625" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/drawable/outline_sports_martial_arts_20.xml" value="0.240625" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/drawable/outline_sports_martial_arts_24.xml" value="0.240625" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/layout/activity_add_martial_art.xml" value="0.221025641025641" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/layout/activity_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/layout/content_main.xml" value="0.22447916666666667" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/layout/list_item.xml" value="0.22447916666666667" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/layout/martial_art.xml" value="0.221025641025641" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/layout/update_martial_art.xml" value="0.22447916666666667" />
+        <entry key="..\:/Notes/Android/SQLite/MartialArts/app/src/main/res/menu/menu_main.xml" value="0.22447916666666667" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

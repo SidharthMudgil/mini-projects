@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Martial Arts</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="action_add">Add Martial Art</string>
+    <string name="action_clear">Clear All</string>
+    <string name="action_delete">Delete Martial Art</string>
+    <string name="martialart_name">MartialArt Name</string>
+    <string name="martialart_color">MartialArt Color</string>
+    <string name="martialart_price">MartialArt Price</string>
+    <string name="cancel">Cancel</string>
+    <string name="error_message">This field can not be blank</string>
+    <string name="martial_art">martial art</string>
+    <string name="example_name">Example Martial Art</string>
+    <string name="example_color">color: White</string>
+    <string name="example_price">₹100.24</string>
+    <string name="alert_title_delete">Delete Martial Art</string>
+    <string name="positive_button_delete">Delete</string>
+    <string name="snackbar_undo">Undo</string>
+    <string name="update_martial_art">update martial art</string>
+    <string name="update">Update</string>
+</resources>

@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">True or False</string>
+    <string name="q1">The Big Apple is a nickname given to Washington D.C in 1971.</string>
+    <string name="q2">Muddy York is a nickname for New York in the Winter.</string>
+    <string name="q3">Peanuts are not nuts!</string>
+    <string name="q4">People may sneeze or cough while sleeping deeply.</string>
+    <string name="q5">Copyrights depreciate over time.</string>
+    <string name="q6">Emus can’t fly.</string>
+    <string name="q7">Electrons move faster than the speed of light.</string>
+    <string name="q8">There is no snow on Minecraft.</string>
+    <string name="q9">Light travels in a straight line.</string>
+    <string name="q10">The Mona Liza was stolen from the Louvre in 1911.</string>
+    <string name="question_view">question view</string>
+    <string name="green">True</string>
+    <string name="red">False</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
