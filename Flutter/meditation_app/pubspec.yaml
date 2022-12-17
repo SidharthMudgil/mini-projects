@@ -1,0 +1,109 @@
+name: meditation_app
+description: A new Flutter project.
+
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+    sdk: '>=2.18.4 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+  flutter_svg: ^1.1.6
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+    #  pattern_bottom.svg
+    #  - images/pattern_bottom_small.svg
+    #  - images/pattern_top.svg
+    #  - images/pattern_top_small.svg
+
+  assets:
+    - images/
+    - icons/
+
+  fonts:
+    - family: sf
+      fonts:
+        - asset: fonts/SF-Pro-Text-Black.otf
+          weight: 900
+        - asset: fonts/SF-Pro-Text-Heavy.otf
+          weight: 800
+        - asset: fonts/SF-Pro-Text-Bold.otf
+          weight: 700
+        - asset: fonts/SF-Pro-Text-Semibold.otf
+          weight: 600
+        - asset: fonts/SF-Pro-Text-Medium.otf
+          weight: 500
+        - asset: fonts/SF-Pro-Text-Regular.otf
+          weight: 400
+        - asset: fonts/SF-Pro-Text-Thin.otf
+          weight: 300
+        - asset: fonts/SF-Pro-Text-Light.otf
+          weight: 200
+        - asset: fonts/SF-Pro-Text-Ultralight.otf
+          weight: 100
+
+        - asset: fonts/SF-Pro-Text-BlackItalic.otf
+          style: italic
+          weight: 900
+        - asset: fonts/SF-Pro-Text-HeavyItalic.otf
+          style: italic
+          weight: 800
+        - asset: fonts/SF-Pro-Text-BoldItalic.otf
+          style: italic
+          weight: 700
+        - asset: fonts/SF-Pro-Text-SemiboldItalic.otf
+          style: italic
+          weight: 600
+        - asset: fonts/SF-Pro-Text-MediumItalic.otf
+          style: italic
+          weight: 500
+        - asset: fonts/SF-Pro-Text-RegularItalic.otf
+          style: italic
+          weight: 400
+        - asset: fonts/SF-Pro-Text-ThinItalic.otf
+          style: italic
+          weight: 300
+        - asset: fonts/SF-Pro-Text-LightItalic.otf
+          style: italic
+          weight: 200
+        - asset: fonts/SF-Pro-Text-UltralightItalic.otf
+          style: italic
+          weight: 100
+
+        - asset: fonts/SFPRODISPLAYBOLD.otf
+          weight: 700
+        - asset: fonts/SFPRODISPLAYMEDIUM.otf
+          weight: 500
+        - asset: fonts/SFPRODISPLAYREGULAR.otf
+          weight: 400
+
+        - asset: fonts/SFPRODISPLAYBLACKITALIC.otf
+          style: italic
+          weight: 700
+        - asset: fonts/SFPRODISPLAYHEAVYITALIC.otf
+          style: italic
+          weight: 600
+        - asset: fonts/SFPRODISPLAYSEMIBOLDITALIC.otf
+          style: italic
+          weight: 500
+        - asset: fonts/SFPRODISPLAYTHINITALIC.otf
+          style: italic
+          weight: 400
+        - asset: fonts/SFPRODISPLAYLIGHTITALIC.otf
+          style: italic
+          weight: 300
+        - asset: fonts/SFPRODISPLAYULTRALIGHTITALIC.otf
+          style: italic
+          weight: 200
