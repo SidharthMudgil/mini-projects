@@ -1,7 +1,6 @@
 AUTHOR = 'SIDHARTH MUDGIL'
 
 import os, shutil
-from time import sleep
 
 Type={
     'Audios' : ('.aif', '.cda', '.mid', '.midi', '.mp3', '.mpa', '.ogg', '.wav', '.wma', '.wpl'),
@@ -21,52 +20,36 @@ Type={
     'Word_Processors' : ('.doc', '.docx', '.odt', '.pdf', '.rtf', '.tex', '.txt', '.wpd'),
 }
 
+def main():
+    # while True:
+    path = input('directory path [ex -> C:/folder1]: ').strip()
+        # try:
+    os.chdir(path)
+        # break
+        # except FileNotFoundError:
+            # print('Enter a Correct Path')
 
 
-def Caller():
-    os.system('cls')
-    print('Enter The path to Manage ( "PATH" ): ')
-    Input=input('>>>')
-    if Input[0]=='"':
-        x,Path,y=Input.split('"')
-    else:
-        Path=Input
+def manager():
+    for file in os.listdir():
+        name, ext = os.path.splitext(file)
         
-    try:
-        os.chdir(Path)
-        for i in range(4):
-            print(f'The Path is Processing ( Wait {3-i} )',end='\r',flush='True')
-            sleep(1)
+        for dir_name in Type.keys():
+            if ext.lower() in Type[dir_name]:
+                if not os.path.exists(dir_name):
+                    os.mkdir(dir_name)
 
-    except FileNotFoundError:
-        print('Enter a Correct Path')
-        Main()
-    os.system('cls')
+                try:
+                    shutil.move(file, dir_name)
+                except PermissionError:
+                    pass
 
 
-def Mover():
-    for i in os.listdir():
-        Name1,Ext1=os.path.splitext(i)
-        for Name,Extension in Type.items():
-            for Ext in Extension:
-                if Ext==Ext1:
-                    if os.path.exists(Name):
-                        pass
-                    else:
-                        os.mkdir(Name)
-                    try:
-                        shutil.move(i,Name)
-                    except PermissionError:
-                        pass
-    try:
-        for i in os.listdir():
-            os.rmdir(i)
-    except:
-        pass
+    for directory in os.listdir():
+        try:
+            os.rmdir(directory)
+        except OSError:
+            pass
 
-def Main():
-    Caller()
-    Mover()
-
-if __name__ == "__main__":
-    Main()
+main()
+manager()

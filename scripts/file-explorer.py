@@ -1,16 +1,8 @@
 import os
 import shutil
-import time
-from ImageUtils import ImageUtil
 
-def DateTime():
-    print(time.strftime("%D %m-%Y"), end="")
-    print(time.strftime("%I:%M %p"))
-
-
-def FileExplorer(Pathway=['F:\\']):
+def file_explorer(Pathway=['F:\\']):
     os.system('cls')
-    DateTime()
     print("F I L E   E X P L O R E R")
     print("OPEN    : OPEN>PATH")
     print("MOVE    : MOVE>PATH1>PATH2")
@@ -26,8 +18,8 @@ def FileExplorer(Pathway=['F:\\']):
         Location = Pathway[len(Pathway)-1]
         os.chdir(Location)
     Current = os.getcwd()
-    for i in range(1):
-        print('"' + ' '*164 + '"', end="")
+
+    i = 0
 
     for fILEfOLDER in os.listdir(Current):
         print(f'" '+fILEfOLDER)
@@ -41,21 +33,21 @@ def FileExplorer(Pathway=['F:\\']):
 
     if count == 0:
         if Input.lower() == 'x':
-            Menu()
+            menu()
         elif Input == '0':
             if len(Pathway) == 1:
-                Menu()
-                FileExplorer()
+                menu()
+                file_explorer()
             elif len(Pathway) > 1:
                 Pathway.pop()
                 Location = ''
                 for i in Pathway:
                     Location = i+'/'
                 os.chdir(Location)
-                FileExplorer(Pathway)
+                file_explorer(Pathway)
         else:
             print()
-            FileExplorer()
+            file_explorer()
     elif count == 1 or count == 2:
         if count == 1:
             a = Input.split('>')
@@ -90,16 +82,16 @@ def FileExplorer(Pathway=['F:\\']):
                 os.system('Pause')
             else:
                 print("File not found")
-            FileExplorer()
+            file_explorer()
             if Type == 'folder':
                 if os.path.exists(Path):
                     Pathway.append(Path)
                     Location = Pathway[len(Pathway)-1]
                     os.chdir(Location)
-                    FileExplorer(Pathway)
+                    file_explorer(Pathway)
                 else:
                     print("File not found")
-                FileExplorer()
+                file_explorer()
 
         elif Command.lower() == 'copy':
             if os.path.exists(Path2):
@@ -108,7 +100,7 @@ def FileExplorer(Pathway=['F:\\']):
                 shutil.copy(Path1, Path2)
             else:
                 print("File not found")
-            FileExplorer()
+            file_explorer()
             if Type == 'folder':
                 if os.path.exists(Path2):
                     print("File found")
@@ -116,21 +108,21 @@ def FileExplorer(Pathway=['F:\\']):
                     shutil.copytree(Path1, Path2)
                 else:
                     print("File not found")
-                FileExplorer()
+                file_explorer()
 
         elif Command.lower() == 'move':
             if os.path.exists(Path1) and os.path.exists(Path2):
                 shutil.move(Path1, Path2)
             else:
                 print("File not found")
-            FileExplorer()
+            file_explorer()
 
         elif Command == 'CREATEF':
             if os.path.exists(Path):
                 print("File found")
             else:
                 os.mkdir(Path)
-            FileExplorer()
+            file_explorer()
 
         elif Command == 'CREATEf':
             if os.path.exists(Path):
@@ -138,121 +130,29 @@ def FileExplorer(Pathway=['F:\\']):
             else:
                 with open(Path, 'a') as f:
                     print('', end="")
-            FileExplorer()
+            file_explorer()
 
         elif Command == 'DELETEF':
             if os.path.exists(Path):
                 shutil.rmtree(Path)
             else:
                 print("File not found")
-            FileExplorer()
+            file_explorer()
 
         elif Command == 'DELETEf':
             if os.path.exists(Path):
                 os.remove(Path)
             else:
                 print("File not found")
-            FileExplorer()
+            file_explorer()
 
         else:
             print()
-            FileExplorer()
+            file_explorer()
 
     else:
         print()
-        FileExplorer()
+        file_explorer()
 
 
-def ImageEditor():
-    os.system('cls')
-    DateTime()
-    print(" .___________________________.")
-    print(" |                           |")
-    print(" | I M A G E -- E D I T O R  |")
-    print(" |                           |")
-    print(" |   1 --> Open/SHOW         |")
-    print(" |                           |")
-    print(" |   2 --> Resize/Crop       |")
-    print(" |                           |")
-    print(" |   3 --> ADJUST Brightness |")
-    print(" |                           |")
-    print(" |   4 --> ADJUST Sharpness  |")
-    print(" |                           |")
-    print(" |   5 --> ADJUST Color      |")
-    print(" |                           |")
-    print(" |   6 --> ADJUST Contrast   |")
-    print(" |                           |")
-    print(" |   7 --> ADJUST ROTATION   |")
-    print(" |                           |")
-    print(" |   8 --> Blur              |")
-    print(" |                           |")
-    print(" |   0 --> EXIT              |")
-    print(" |___________________________|")
-    a = input('>>>')
-
-    if a == '0':
-        Menu()
-    else:
-        path = input("COPY THE IMAGE PATH AND PASTE HERE >>>")
-        try:
-            x, Path, y = path.split('"')
-        except ValueError:
-            Path = path
-        except FileNotFoundError:
-            print("File Not Found")
-
-        image = ImageUtil(Path)
-        if a == '1':
-            image.open()
-
-        elif a == '2':
-            image.crop()
-
-        elif a == '3':
-            image.change_brightness()
-
-        elif a == '4':
-            image.change_sharpness()
-
-        elif a == '5':
-            image.chage_color()
-
-        elif a == '6':
-            image.change_contrast()
-
-        elif a == '7':
-            image.rotate()
-
-        elif a == '8':
-            image.blur()
-
-        ImageEditor()
-
-
-def Menu():
-    os.system('cls')
-    DateTime()
-    print(" .__________________________.")
-    print(" |                          |")
-    print(" |        M  E  N  U        |")
-    print(" |                          |")
-    print(" |   1 -->  FILE EXPLORER   |")
-    print(" |                          |")
-    print(" |    2 ->  IMAGE EDITOR    |")
-    print(" |                          |")
-    print(" |       0 --> EXIT         |")
-    print(" |__________________________|")
-    c = input('>>>')
-    if c == '1':
-        FileExplorer()
-    elif c == '2':
-        ImageEditor()
-    elif c == '0':
-        exit()
-
-
-if __name__ == "__main__":
-    try:
-        Menu()
-    except KeyboardInterrupt:
-        Menu()
+file_explorer()
