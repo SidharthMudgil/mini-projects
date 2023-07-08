@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 .addTransportType(NetworkCapabilities.TRANSPORT_CELLULAR)
                 .build();
 
-        ConnectivityManager connectivityManager = getSystemService(ConnectivityManager.class);
-        connectivityManager.requestNetwork(networkRequest, networkCallback);
+            ConnectivityManager connectivityManager = getSystemService(ConnectivityManager.class);
+            connectivityManager.requestNetwork(networkRequest, networkCallback);
 
         dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
