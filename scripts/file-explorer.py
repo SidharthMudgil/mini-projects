@@ -1,158 +1,112 @@
 import os
 import shutil
 
-def file_explorer(Pathway=['F:\\']):
+COMMANDS = ('open', 'mv', 'cp', 'new', 'del', 'up', 'exit')
+
+def menu():
+    print("open : open 'path'")
+    print("new  : new 'path'")
+    print("del  : del 'path'")
+    print("mv   : mv 'from' 'to'")
+    print("cp   : cp 'from' 'to'")
+    print("up   : up")
+    print("exit : exit")
+    print('*' * 50)
+    curr_dir = os.getcwd()
+    for files in os.listdir(curr_dir):
+        print(files)
+    print('*' * 50)
+
+
+def clean_input():
+    _input = input('>').strip().lower()
+
+    while "  " in _input:
+        _input = _input.replace("  ", ' ')
+
+    query = _input.split(' ')
+
+    if query[0] in COMMANDS:
+        return query
+
+    print(f"command {query[0]} not found")
+
+
+def file_explorer(pathway=[]):
     os.system('cls')
-    print("F I L E   E X P L O R E R")
-    print("OPEN    : OPEN>PATH")
-    print("MOVE    : MOVE>PATH1>PATH2")
-    print("CREATEF : CREATEF>PATH")
-    print("COPY    : COPY>PATH1>PATH2")
-    print("DELETEF : DELETEF>PATH")
-    print("CREATEf : CREATEf>PATH")
-    print("0/X     : BACK/EXIT")
-    print("DELETEf : DELETEf>PATH")
-    print(">>>")
-    count = 0
-    if len(Pathway) == 1:
-        Location = Pathway[len(Pathway)-1]
-        os.chdir(Location)
-    Current = os.getcwd()
 
-    i = 0
+    if len(pathway) == 1:
+        location = pathway[0]
+        os.chdir(location)
 
-    for fILEfOLDER in os.listdir(Current):
-        print(f'" '+fILEfOLDER)
-        i += 1
+    menu()
+    query = clean_input()
 
-    Type = ''
-    Input = input("\nINPUT COMMAND >>> ")
-    for i in Input:
-        if i == '>':
-            count += 1
-
-    if count == 0:
-        if Input.lower() == 'x':
-            menu()
-        elif Input == '0':
-            if len(Pathway) == 1:
-                menu()
-                file_explorer()
-            elif len(Pathway) > 1:
-                Pathway.pop()
-                Location = ''
-                for i in Pathway:
-                    Location = i+'/'
-                os.chdir(Location)
-                file_explorer(Pathway)
+    if query[0] == 'exit':
+        return
+    elif query[0] == 'up':
+        if len(pathway) == 0:
+            return
         else:
-            print()
-            file_explorer()
-    elif count == 1 or count == 2:
-        if count == 1:
-            a = Input.split('>')
-            Command = a[0]
-            x = a[1]
-            a, Path, b = x.split('"')
-            for i in Path:
-                if i == '.':
-                    Type = 'file'
+            pathway.pop()
+            file_explorer(pathway)
+
+    if len(query) == 2:
+        command = query[0]
+        path = query[1].strip().strip('"')
+
+        if command == 'open':
+            if os.path.exists(path):
+                if os.path.isfile(path):
+                    with open(path) as file:
+                        for line in file:
+                            print(line)
+                elif os.path.isdir(path):
+                    pathway.append(path)
+                    file_explorer(pathway)
+            else:
+                print("Path does not exist")
+
+        elif command == 'new':
+            if not os.path.exists(path):
+                if '.' in os.path.basename(path):
+                    with open(path, 'w') as file:
+                        pass
                 else:
-                    Type = 'folder'
+                    os.mkdir(path)
+            else:
+                print("Path already exists")
 
-        elif count == 2:
-            a = Input.split('>')
-            Command = a[0]
-            x, y = a[1], a[2]
-            a, Path1, b = x.split('"')
-            a, Path2, b = y.split('"')
-            for i in Path1:
-                if i == '.':
-                    Type = 'file'
+        elif command == 'del':
+            if os.path.exists(path):
+                if '.' in os.path.basename(path):
+                    os.remove(path)
                 else:
-                    Type = 'folder'
-            print(Type)
-        if Command.lower() == 'open':
-            if os.path.exists(Path):
-                f = open(Path)
-                print("."*136+"\n")
-                for i in f.readlines():
-                    print(i)
-                print("."*136)
-                os.system('Pause')
+                    shutil.rmtree(path)
             else:
-                print("File not found")
-            file_explorer()
-            if Type == 'folder':
-                if os.path.exists(Path):
-                    Pathway.append(Path)
-                    Location = Pathway[len(Pathway)-1]
-                    os.chdir(Location)
-                    file_explorer(Pathway)
+                print("Path does not exist")
+
+    elif len(query) == 3:
+        command = query[0]
+        path1 = query[1].strip().strip('"')
+        path2 = query[2].strip().strip('"')
+
+        if command == 'cp':
+            if os.path.exists(path1) and os.path.exists(path2):
+                if '.' in os.path.basename(path1):
+                    shutil.copy(path1, path2)
                 else:
-                    print("File not found")
-                file_explorer()
-
-        elif Command.lower() == 'copy':
-            if os.path.exists(Path2):
-                print("File found")
-            elif os.path.exists(Path1):
-                shutil.copy(Path1, Path2)
+                    shutil.copytree(path1, path2)
             else:
-                print("File not found")
-            file_explorer()
-            if Type == 'folder':
-                if os.path.exists(Path2):
-                    print("File found")
-                elif os.path.exists(Path1):
-                    shutil.copytree(Path1, Path2)
-                else:
-                    print("File not found")
-                file_explorer()
+                print("Either or both paths do not exist")
 
-        elif Command.lower() == 'move':
-            if os.path.exists(Path1) and os.path.exists(Path2):
-                shutil.move(Path1, Path2)
+        elif command == 'mv':
+            if os.path.exists(path1) and os.path.exists(path2):
+                shutil.move(path1, path2)
             else:
-                print("File not found")
-            file_explorer()
+                print("Either or both paths do not exist")
 
-        elif Command == 'CREATEF':
-            if os.path.exists(Path):
-                print("File found")
-            else:
-                os.mkdir(Path)
-            file_explorer()
-
-        elif Command == 'CREATEf':
-            if os.path.exists(Path):
-                print("File found")
-            else:
-                with open(Path, 'a') as f:
-                    print('', end="")
-            file_explorer()
-
-        elif Command == 'DELETEF':
-            if os.path.exists(Path):
-                shutil.rmtree(Path)
-            else:
-                print("File not found")
-            file_explorer()
-
-        elif Command == 'DELETEf':
-            if os.path.exists(Path):
-                os.remove(Path)
-            else:
-                print("File not found")
-            file_explorer()
-
-        else:
-            print()
-            file_explorer()
-
-    else:
-        print()
-        file_explorer()
+    file_explorer(pathway)
 
 
 file_explorer()
