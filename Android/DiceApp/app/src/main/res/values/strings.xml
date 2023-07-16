@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Dice App</string>
-    <string name="roll_the_dice">roll the dice</string>
-    <string name="app_logo">app logo</string>
-    <string name="app_background">app background</string>
-    <string name="dice_one_image">dice one image</string>
-    <string name="dice_two_image">dice two image</string>
-</resources>

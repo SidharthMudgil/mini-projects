@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Fast Fingers</string>
-    <string name="tap_here">Tap Here!</string>
-    <string name="_15_sec">15 sec</string>
-    <string name="tap_count">100 more to go</string>
-    <string name="game_started">game started</string>
-</resources>

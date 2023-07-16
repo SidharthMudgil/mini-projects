@@ -1,2 +1,0 @@
-include ':app'
-rootProject.name = "Connect 3 Game"
