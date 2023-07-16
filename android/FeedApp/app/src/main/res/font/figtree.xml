@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:font="@font/figtree_light"
+        android:fontStyle="normal"
+        android:fontWeight="300" />
+
+    <font
+        android:font="@font/figtree_light_italic"
+        android:fontStyle="italic"
+        android:fontWeight="300" />
+
+    <font
+        android:font="@font/figtree_regular"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+
+    <font
+        android:font="@font/figtree_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400" />
+
+    <font
+        android:font="@font/figtree_medium"
+        android:fontStyle="normal"
+        android:fontWeight="500" />
+
+    <font
+        android:font="@font/figtree_medium_italic"
+        android:fontStyle="italic"
+        android:fontWeight="500" />
+
+    <font
+        android:font="@font/figtree_semibold"
+        android:fontStyle="normal"
+        android:fontWeight="600" />
+
+    <font
+        android:font="@font/figtree_semibold_italic"
+        android:fontStyle="italic"
+        android:fontWeight="600" />
+
+    <font
+        android:font="@font/figtree_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700" />
+
+    <font
+        android:font="@font/figtree_bold_italic"
+        android:fontStyle="italic"
+        android:fontWeight="700" />
+
+    <font
+        android:font="@font/figtree_extrabold"
+        android:fontStyle="normal"
+        android:fontWeight="800" />
+
+    <font
+        android:font="@font/figtree_extrabold_italic"
+        android:fontStyle="italic"
+        android:fontWeight="800" />
+
+    <font
+        android:font="@font/figtree_black"
+        android:fontStyle="normal"
+        android:fontWeight="900" />
+
+    <font
+        android:font="@font/figtree_black_italic"
+        android:fontStyle="italic"
+        android:fontWeight="900" />
+</font-family>

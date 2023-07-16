@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Lyrical</string>
+    <string name="song_title">Song Title</string>
+    <string name="artist_name">Artist Name</string>
+    <string name="search">search</string>
+    <string name="no_lyrics_found">No lyrics found"</string>
+</resources>

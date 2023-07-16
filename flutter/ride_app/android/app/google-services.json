@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "596726924029",
+    "project_id": "sidharth-127c8",
+    "storage_bucket": "sidharth-127c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596726924029:android:6a0497015127c4dc8f7494",
+        "android_client_info": {
+          "package_name": "com.sidharth.sidharth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "596726924029-t1g8tds8dm3291a4japqtp34esmd83q6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvCJpFWdNB_pf-cUgs7makMvFClh7Mt5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "596726924029-t1g8tds8dm3291a4japqtp34esmd83q6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

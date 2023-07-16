@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_card"
+    android:layout_width="300dp"
+    android:layout_height="350dp"
+    android:layout_margin="15dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="0dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_cover_song"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/song_cover"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/placeholder" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@id/iv_cover_song"
+            android:layout_alignBottom="@id/iv_cover_song"
+            android:background="@drawable/bg_title"
+            android:fontFamily="@font/robot_thin"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingStart="10dp"
+            android:maxLines="1"
+            android:paddingEnd="10dp"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            tools:text="Placeholder" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#433F51B5"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/timerTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="33"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/_15_sec"
+        android:textColor="#3F51B5"
+        android:textSize="60sp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="33"
+        android:backgroundTint="#00000000"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/tap_here"
+        android:textColor="#D81B60"
+        android:textSize="60sp" />
+
+    <TextView
+        android:id="@+id/tapCountTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:layout_weight="33"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/tap_count"
+        android:textColor="#3F51B5"
+        android:textSize="34sp" />
+</LinearLayout>
