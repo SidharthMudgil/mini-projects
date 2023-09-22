@@ -63,6 +63,8 @@
 > This is a basic Math Educational app for kids.
 
 #### 16. Memepur
+> It is an app for showing jokes from different categories.
+- The user can also add new categories and jokes.
 
 #### 17. Memorable Places App
 > Memorable Places is a simple app that allows you to store and view a list of memorable places. 
