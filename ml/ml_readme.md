@@ -1,9 +1,17 @@
-## Machine Learning Projects
-#### 1. Handwritten Digit Recognizer
-> This is a Python code that trains a neural network model to classify handwritten digits.
-- The code uses the MNIST dataset, which is a standard dataset of handwritten digits.
-- The code compiles the model using the Adam optimizer and the sparse categorical crossentropy loss function.
+# Python Mini Projects
+Below are some Python based mini projects based on various domain.
 
-#### 2. Word Prediction
-> This is a Python code that trains a neural network model to generate text. The code uses a technique called Long Short-Term Memory (LSTM).
-- The code then creates input and output sequences. The input sequences are sequences of characters of length 60. The output sequences are the next character in the sequence.
+## Table of Contents
+- [Projects](#projects)
+- [Installation](#installation)
+
+## Projects
+| Name | Description |
+| :---: | :--- | 
+|[Handwritten Digit Recognizer](./handwritten-digit-recognizer/)|This is a Python code that trains a neural network model to classify handwritten digits.|
+|[Word Prediction](./word-prediction/)|This is a Python code that trains a neural network model to generate text. The code uses a technique called Long Short-Term Memory (LSTM).|
+
+## Installation
+
+
+
