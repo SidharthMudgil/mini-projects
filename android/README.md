@@ -37,4 +37,6 @@ Below are some android based mini projects based on various domain.
 
 
 ## Installation
-
+1. Clone the Repository
+2. Open the Project in Android Studio
+3. Build and Run

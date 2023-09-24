@@ -3,7 +3,6 @@ Below are some Python based mini projects based on various domain.
 
 ## Table of Contents
 - [Projects](#projects)
-- [Installation](#installation)
 
 ## Projects
 | Name | Description |
@@ -16,7 +15,3 @@ Below are some Python based mini projects based on various domain.
 |[Number to Words](./number-to-words.py)|This is a Python code for converting a number to words. The code uses a recursive function.|
 |[Password Generator](./password-generator.py)|The code uses a list of characters to represent the different types of characters that can be used in a password, such as numbers, lowercase alphabets, uppercase alphabets, and special symbols. |
 |[Password Validator](./password-validator.py)|The code uses a regular expression to check if the password contains at least one digit, one uppercase letter, one lowercase letter, and one special symbol. The code also checks if the password is at least 6 characters long.|
-
-## Installation
-
-

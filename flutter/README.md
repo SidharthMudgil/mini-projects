@@ -3,6 +3,7 @@ Below are some Flutter based mini projects based on various domain.
 
 ## Table of Contents
 - [Projects](#projects)
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
 
 ## Projects
@@ -15,6 +16,13 @@ Below are some Flutter based mini projects based on various domain.
 |[Recipe App](./recipe_app/)| A recipe app is a software application that provides users with access to a collection of recipes.|
 |[Ride App](./ride_app/)| This app connects people who need rides with drivers who are willing to provide them.|
 
+## Prerequisites
+Ensure you have the following installed:
+- **Flutter**: [Installation Guide](https://flutter.dev/docs/get-started/install)
+- **Dart**: [Installation Guide](https://dart.dev/get-dart)
+
 ## Installation
-
-
+1. Clone the Repository
+2. Open the Project in Android Studio
+3. Get Dependencies
+4. Build and Run

@@ -3,7 +3,6 @@ Below are some C++ based mini projects based on various domain.
 
 ## Table of Contents
 - [Projects](#projects)
-- [Installation](#installation)
 
 ## Projects
 | Name | Description |
@@ -13,7 +12,3 @@ Below are some C++ based mini projects based on various domain.
 |[Hospital Management](./hospital-management/)| It is a program for a hospital management system. The program allows users to add, display, search, transpose, delete, clear, and modify patient records.|
 |[Pong Game](./pong-game/)| It is a simple Pong game played between two players, each controlling a paddle. |
 |[Snake Game](./snake-game/)| It is the classic simple snake game.|
-
-
-## Installation
-
