@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginBottom="@dimen/white_spacing">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_university"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="#EFEFFF"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="0dp" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/white_spacing"
+        app:constraint_referenced_ids="tv_name,flow_country,flow_website"
+        app:flow_horizontalAlign="start"
+        app:flow_verticalGap="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_university"
+        app:layout_constraintEnd_toEndOf="@+id/cv_university"
+        app:layout_constraintStart_toStartOf="@+id/cv_university"
+        app:layout_constraintTop_toTopOf="@+id/cv_university" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif-black"
+        android:maxLines="1"
+        android:textSize="18sp"
+        tools:text="Indian Institute of Technology New Delhi India sidharth mudgil" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_country"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="tv_country_label,tv_country"
+        app:flow_horizontalGap="15dp"
+        app:flow_verticalAlign="center" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_country_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/country"
+        android:textSize="14sp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_country"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textSize="16sp"
+        tools:text="India" />
+
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_website"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:constraint_referenced_ids="tv_website_label,tv_website"
+        app:flow_horizontalGap="15dp"
+        app:flow_verticalAlign="center" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_website_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/website"
+        android:textSize="14sp" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_website"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="#1737FF"
+        android:textSize="16sp"
+        tools:text="https://www.iit.com" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
