@@ -34,6 +34,7 @@ Below are some android based mini projects based on various domain.
 |[True or False](./TrueorFalse/)|TrueOrFalse is an Android quiz app that tests the user's knowledge of true or false statements.|
 |[Weather App](./WeatherApp/)|WeatherApp is an Android app that provides weather information for a given city.|
 |[World Trivia](./WorldTrivia/)|This app asks users about different trivia related to different part of the world.|
+|[Vidya Khoj](./VidyaKhoj/)|This app uses fetches live university data every 10 seconds using foreground services and show it to the user.|
 
 
 ## Installation

@@ -5,25 +5,16 @@ import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
-import android.util.Log
 import androidx.core.app.NotificationCompat
+import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.sidharth.vidyakhoj.R
-import com.sidharth.vidyakhoj.data.UniversityApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
-import javax.inject.Inject
 
 class RefreshDataService : Service() {
     private val handler = Handler(Looper.getMainLooper())
 
-    @Inject
-    lateinit var universityApi: UniversityApi
-
-    private val refreshDataRunnable = object : Runnable {
-        override fun run() {
-            handler.postDelayed(this, 10000)
-            start()
-        }
+    private val refreshDataRunnable = Runnable {
+        fetchDataFromApi()
+        start()
     }
 
     override fun onBind(intent: Intent?): IBinder? {
@@ -49,18 +40,21 @@ class RefreshDataService : Service() {
 
         startForeground(FOREGROUND_SERVICE_ID, notification)
 
-        handler.post(refreshDataRunnable)
+        handler.postDelayed(refreshDataRunnable, 10000)
     }
 
     private fun fetchDataFromApi() {
-        GlobalScope.launch {
-            Log.d("s", universityApi.getUniversities().toString())
+        Intent().apply {
+            action = ACTION_REFRESH
+            sendBroadcast(this)
+            LocalBroadcastManager.getInstance(this@RefreshDataService).sendBroadcast(this)
         }
     }
 
     companion object {
         private const val FOREGROUND_SERVICE_ID = 101
         const val CHANNEL_ID = "DataRefreshServiceChannel"
+        const val ACTION_REFRESH = "updateData"
     }
 
     enum class Action {
