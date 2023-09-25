@@ -1,5 +1,6 @@
 package com.sidharth.vidyakhoj.service
 
+import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import android.os.Handler
@@ -22,7 +23,7 @@ class RefreshDataService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
-            Action.START.toString() -> {}
+            Action.START.name -> {}
             else -> stopSelf()
         }
         start()
@@ -30,8 +31,16 @@ class RefreshDataService : Service() {
     }
 
     private fun start() {
+        val pendingIntent = PendingIntent.getActivity(
+            this,
+            0,
+            packageManager.getLaunchIntentForPackage(this.packageName),
+            PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+        )
+
         val notification = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentIntent(pendingIntent)
             .setOngoing(true)
             .setContentTitle("Syncing Data")
             .setContentText("Refreshing data from API")
