@@ -1,11 +1,14 @@
 package com.sidharth.vidyakhoj.service
 
+import android.app.AlarmManager
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
 import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
+import android.os.SystemClock
+import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.sidharth.vidyakhoj.R
@@ -49,6 +52,22 @@ class RefreshDataService : Service() {
 
         startForeground(FOREGROUND_SERVICE_ID, notification)
         handler.postDelayed(refreshDataRunnable, 10000)
+    }
+
+    override fun onTaskRemoved(rootIntent: Intent?) {
+        val restartServiceIntent = Intent(applicationContext, this.javaClass)
+        restartServiceIntent.setPackage(packageName)
+
+        val restartServicePendingIntent = PendingIntent.getService(
+            applicationContext,
+            1,
+            restartServiceIntent,
+            PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_IMMUTABLE
+        )
+        val alarmService = applicationContext.getSystemService(ALARM_SERVICE) as AlarmManager
+        alarmService[AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime() + 1000] =
+            restartServicePendingIntent
+        super.onTaskRemoved(rootIntent)
     }
 
     private fun fetchDataFromApi() {
