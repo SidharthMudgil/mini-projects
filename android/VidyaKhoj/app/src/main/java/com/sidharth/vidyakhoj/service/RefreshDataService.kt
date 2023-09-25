@@ -10,6 +10,7 @@ import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.sidharth.vidyakhoj.R
 
+
 class RefreshDataService : Service() {
     private val handler = Handler(Looper.getMainLooper())
 
@@ -23,11 +24,11 @@ class RefreshDataService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         when (intent?.action) {
-            Action.START.name -> {}
-            else -> stopSelf()
+            Action.START.name -> start()
+            Action.STOP.name -> stopSelf()
+            else -> {}
         }
-        start()
-        return START_NOT_STICKY
+        return START_STICKY
     }
 
     private fun start() {
