@@ -8,7 +8,6 @@ import android.os.Handler
 import android.os.IBinder
 import android.os.Looper
 import android.os.SystemClock
-import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.sidharth.vidyakhoj.R
@@ -26,15 +25,6 @@ class RefreshDataService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
-        when (intent?.action) {
-            Action.START.name -> start()
-            Action.STOP.name -> stopSelf()
-            else -> {}
-        }
-        return START_STICKY
-    }
-
-    private fun start() {
         val pendingIntent = PendingIntent.getActivity(
             this,
             0,
@@ -51,7 +41,9 @@ class RefreshDataService : Service() {
             .build()
 
         startForeground(FOREGROUND_SERVICE_ID, notification)
-        handler.postDelayed(refreshDataRunnable, 10000)
+        handler.post(refreshDataRunnable)
+
+        return START_STICKY
     }
 
     override fun onTaskRemoved(rootIntent: Intent?) {
@@ -83,9 +75,5 @@ class RefreshDataService : Service() {
         private const val FOREGROUND_SERVICE_ID = 101
         const val CHANNEL_ID = "DataRefreshServiceChannel"
         const val ACTION_REFRESH = "updateData"
-    }
-
-    enum class Action {
-        START, STOP
     }
 }

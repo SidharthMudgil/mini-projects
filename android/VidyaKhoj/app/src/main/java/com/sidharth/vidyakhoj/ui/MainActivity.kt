@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(mainBinding.root)
         Intent(this, RefreshDataService::class.java).apply {
-            action = RefreshDataService.Action.START.name
             startForegroundService(this)
         }
     }

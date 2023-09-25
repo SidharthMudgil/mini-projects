@@ -17,10 +17,6 @@ class UniversityViewModel @Inject constructor(
     private val _universities = MutableStateFlow<List<University>>(listOf())
     val universities: StateFlow<List<University>> get() = _universities
 
-    init {
-        fetchUniversities()
-    }
-
     fun fetchUniversities() = viewModelScope.launch {
         repository.getUniversities().collect {
             _universities.emit(it)
