@@ -14,7 +14,6 @@ class RefreshDataService : Service() {
 
     private val refreshDataRunnable = Runnable {
         fetchDataFromApi()
-        start()
     }
 
     override fun onBind(intent: Intent?): IBinder? {
@@ -39,7 +38,6 @@ class RefreshDataService : Service() {
             .build()
 
         startForeground(FOREGROUND_SERVICE_ID, notification)
-
         handler.postDelayed(refreshDataRunnable, 10000)
     }
 
@@ -49,6 +47,7 @@ class RefreshDataService : Service() {
             sendBroadcast(this)
             LocalBroadcastManager.getInstance(this@RefreshDataService).sendBroadcast(this)
         }
+        handler.postDelayed(refreshDataRunnable, 10000)
     }
 
     companion object {
