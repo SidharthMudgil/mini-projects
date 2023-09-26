@@ -27,7 +27,7 @@ class RefreshDataService : Service() {
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         val pendingIntent = PendingIntent.getActivity(
             this,
-            0,
+            1,
             packageManager.getLaunchIntentForPackage(this.packageName),
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
@@ -47,19 +47,20 @@ class RefreshDataService : Service() {
     }
 
     override fun onTaskRemoved(rootIntent: Intent?) {
-        val restartServiceIntent = Intent(applicationContext, this.javaClass)
+        val restartServiceIntent = Intent(this, this.javaClass)
         restartServiceIntent.setPackage(packageName)
 
         val restartServicePendingIntent = PendingIntent.getService(
-            applicationContext,
+            this,
             1,
             restartServiceIntent,
             PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_IMMUTABLE
         )
-        val alarmService = applicationContext.getSystemService(ALARM_SERVICE) as AlarmManager
-        alarmService[AlarmManager.ELAPSED_REALTIME, SystemClock.elapsedRealtime() + 1000] =
-            restartServicePendingIntent
-        super.onTaskRemoved(rootIntent)
+        val alarmService = getSystemService(ALARM_SERVICE) as AlarmManager
+        alarmService[
+            AlarmManager.ELAPSED_REALTIME,
+            SystemClock.elapsedRealtime() + 100
+        ] = restartServicePendingIntent
     }
 
     private fun fetchDataFromApi() {
