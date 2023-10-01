@@ -1,4 +1,4 @@
-# StudentDB-SpringBoot-CRUD
+# SpringBoot REST CRUD
 
 <p align="center">
  <img alt="springboot" src="https://github.com/TharunBalaji2004/StudentDB-SpringBoot-CRUD/assets/95350584/b4d1c505-6c91-4c81-ad6a-18a6865ba0d5" height="110px" width="220px" />
