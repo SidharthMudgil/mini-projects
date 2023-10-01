@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>EMS | New Employee</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="shortcut icon" th:href="@{/springboot.ico}">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                <h1 class="text-center">New Employee Details</h1>
+                <div class="card-body" style="padding: 5% 25%;">
+                    <form th:action="@{/ems/add}" th:object="${employee}" method="post">
+                        <div class="form-group">
+                            <label for="empname">Employee Name</label>
+                            <input
+                                    id="empname" type="text" name="empName" th:field="*{empName}" class="form-control"
+                                placeholder="Eg: John Doe" />
+                            <span id="nameError" style="color: red;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="empemail">Employee Email</label>
+                            <input
+                                    id="empemail" type="text" name="empEmail" th:field="*{empEmail}" class="form-control"
+                                    placeholder="Eg: abc@example.com" />
+                            <span id="emailError" style="color: red;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="empphone">Employee Phone Number</label>
+                            <input
+                                    id="empphone" type="text" name="empPhone" th:field="*{empPhone}" class="form-control"
+                                    placeholder="Eg: 1234567890" />
+                            <span id="phoneError" style="color: red;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="empdept">Employee Department</label>
+                            <input
+                                    id="empdept" type="text" name="empDept" th:field="*{empDept}" class="form-control"
+                                    placeholder="Department Name" />
+                            <span id="deptError" style="color: red;"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="empsalary">Employee Salary</label>
+                            <input
+                                    id="empsalary" type="text" name="empSalary" th:field="*{empSalary}" class="form-control"
+                                    placeholder="Employee Salary" />
+                            <span id="salaryError" style="color: red;"></span>
+                        </div>
+                        <div class="box-footer text-center">
+                            <button type="submit" class="btn btn-primary">
+                                Add Employee
+                            </button>
+                        </div>
+                    </form>
+                    <br>
+                    <div class="text-center">
+                        <a th:href="@{/ems}">
+                            <button class="btn btn-primary">
+                                View Employees
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            let valid = true
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+            const alphaRegex = /[a-zA-Z]/
+
+            let empName = document.getElementById('empname').value;
+            let empEmail = document.getElementById('empemail').value;
+            let empPhone = document.getElementById('empphone').value;
+            let empDept = document.getElementById('empdept').value;
+            let empSalary = document.getElementById('empsalary').value;
+
+            if (!empName) {
+                valid = false
+                document.getElementById("nameError").textContent = "*Name cannot be empty"
+            } else {
+                document.getElementById("nameError").textContent = ""
+            }
+
+            if (!emailRegex.test(empEmail)) {
+                valid = false
+                document.getElementById("emailError").textContent = "*Invalid Email Address"
+            } else {
+                document.getElementById("emailError").textContent = ""
+            }
+
+            if (empPhone.length < 10){
+                valid = false
+                document.getElementById("phoneError").textContent = "*Phone Number should have 10 digits"
+            } else {
+                document.getElementById("phoneError").textContent = ""
+            }
+
+            if (!empDept) {
+                valid = false
+                document.getElementById("deptError").textContent = "*Department Name cannot be empty"
+            } else {
+                document.getElementById("deptError").textContent = ""
+            }
+
+            if (!empSalary) {
+                valid = false
+                document.getElementById("salaryError").textContent = "*Salary cannot be empty"
+            }
+
+            if (alphaRegex.test(empSalary)) {
+                valid = false
+                document.getElementById("salaryError").textContent = "*Salary should be numerical"
+            }
+            if (!empSalary) {
+                valid = false
+                document.getElementById("salaryError").textContent = "*Salary cannot be empty"
+            }
+            if (empSalary && !alphaRegex.test(empSalary)){
+                document.getElementById("salaryError").textContent = ""
+            }
+
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

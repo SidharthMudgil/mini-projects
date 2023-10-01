@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>EMS | Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="shortcut icon" th:href="@{/springboot.ico}">
+</head>
+<body>
+    <div class="container">
+        <div class="col-lg-6 col-mg-6 col-sm-6 container justify-content-center card" style="padding-bottom: 20px;">
+
+                <h1>Registered Employees</h1>
+
+            <a th:href="@{/ems/add}">
+                <button class="btn btn-primary">
+                    Add Employee
+                </button>
+            </a>
+
+        </div>
+        <br>
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Employee Name</th>
+                    <th>Employee Email</th>
+                    <th>Phone Number</th>
+                    <th>Employee Department</th>
+                    <th>Employee Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="employee: ${employees}">
+                    <td th:text="${employee.empName}"></td>
+                    <td th:text="${employee.empEmail}"></td>
+                    <td th:text="${employee.empPhone}"></td>
+                    <td th:text="${employee.empDept}"></td>
+                    <td th:text="${employee.empSalary}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
