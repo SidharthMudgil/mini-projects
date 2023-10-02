@@ -4,15 +4,10 @@ Webtalk is a video call Android app developed in Kotlin which uses WebRTC and fi
 receive notifications, call your friends, create an account etc.
 
 Screenshots:
-<table>
-  <tr>
-    <td> <img src="https://github.com/bhaskarblur/mini-projects/assets/85757758/309c96b2-f144-42c1-ba58-fdc508576c42"  alt="1" width = 360px height = 640px ></td>
-    <td><img src="https://github.com/bhaskarblur/mini-projects/assets/85757758/18232ea3-cfcc-4d35-8fc2-e2c80fca94a8" alt="3" width = 360px height = 640px></td>
-  
-  </tr>
-</table>
 
-![1695618420326](https://github.com/bhaskarblur/mini-projects/assets/85757758/18232ea3-cfcc-4d35-8fc2-e2c80fca94a8)
+| ScreenShot 1  | ScreenShot 1  |
+| ------------- | ------------- |
+| <img src="https://github.com/bhaskarblur/mini-projects/assets/85757758/309c96b2-f144-42c1-ba58-fdc508576c42"  alt="1" width = 360px height = 640px >  | <img src="https://github.com/bhaskarblur/mini-projects/assets/85757758/18232ea3-cfcc-4d35-8fc2-e2c80fca94a8" alt="3" width = 360px height = 640px> |
 
 Stack used: Java, Kotlin, WebRTC, Firebase, ICE Server, Hilt, Foreground Services.
 
