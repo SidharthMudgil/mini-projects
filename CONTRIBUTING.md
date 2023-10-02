@@ -1,6 +1,5 @@
 # Contributing to `mini-projects`
-
-Thank you for contributing to our repository! Follow these guidelines when adding a project:
+  Thank you for contributing to our repository! Follow these guidelines when adding a project:
 
 1. **Directory Structure:**
    - Navigate to the respective category directory (e.g., `cpp`, `android`, etc.).
@@ -30,3 +29,5 @@ Thank you for contributing to our repository! Follow these guidelines when addin
    - If adding a new category, update the main README with the category details and link.
 
 Example table for GUI project README: https://github.com/SidharthMudgil/mosam/
+
+### Don't add unnecessary projects like rock paper scissor, management system, etc. They are of no use.
