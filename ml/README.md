@@ -15,3 +15,4 @@ Below are some Machine Learning projects.
 |[Cats And Dogs](./cats_and_dogs/)|This is a Python code that trains a neural network model to classify images of cats and dogs.|
 |[Sentiment Analysis](./sentiment-analysis/)|This is a Python code that trains a neural network model to classify movie reviews as positive or negative.|
 |[Medical Cost Prediction](./medical_costs/)|This is a Python code that trains a neural network model to predict medical costs.|
+|[Disease Predictor](./Disease_Predictor/)|This is a Python code that trains a Naive-bayes, Random-forest, SVM model to predict Diseases.|
