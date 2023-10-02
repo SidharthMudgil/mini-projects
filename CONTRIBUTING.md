@@ -12,16 +12,21 @@ Thank you for contributing to our repository! Follow these guidelines when addin
    - For projects needing documentation:
      - Include installation instructions if necessary.
      - Describe input, output, and usage.
-     - If GUI-related, add screenshots or demos (optional).
+     - If GUI-related (web, Android, Flutter, etc.):
+       - Add a project title.
+       - Provide a brief project description.
+       - Include screenshots or demos in a table format (if applicable).
+       - If additional installation steps are required, provide clear instructions.
+       - Demos are optional but encouraged for better understanding.
 
 3. **Naming Convention:**
    - Follow existing file and project naming conventions.
 
 4. **Readme Links:**
-   - If the project needs documentation, provide a link in the category README.
+   - If the project needs detailed documentation, provide a link in the category README.
    - For simple scripts or self-explanatory projects, link directly to the project directory.
 
 5. **Update Category README:**
    - If adding a new category, update the main README with the category details and link.
 
-Thank you for your contributions! Your help makes our repository better.
+Example table for GUI project README: https://github.com/SidharthMudgil/mosam/
