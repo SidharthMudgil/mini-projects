@@ -2,8 +2,10 @@
 Below are some android based mini projects based on various domain.
 
 ## Table of Contents
-- [Projects](#projects)
-- [Installation](#installation)
+- [Android Mini Projects](#android-mini-projects)
+  - [Table of Contents](#table-of-contents)
+  - [Projects](#projects)
+  - [Installation](#installation)
 
 ## Projects
 | Name | Description |
@@ -33,6 +35,7 @@ Below are some android based mini projects based on various domain.
 |[Times Tables](./TimesTablesApp/)| It is a simple Android app that generates and displays multiplication tables.|
 |[True or False](./TrueorFalse/)|TrueOrFalse is an Android quiz app that tests the user's knowledge of true or false statements.|
 |[Weather App](./WeatherApp/)|WeatherApp is an Android app that provides weather information for a given city.|
+|[WebTalk](./WebTalk/)| WebTalk is an Android app for Video & Audio using WebRTC where people can talk over video/audio from anywhere for free, also receive call notification.
 |[World Trivia](./WorldTrivia/)|This app asks users about different trivia related to different part of the world.|
 |[Vidya Khoj](./VidyaKhoj/)|This app uses fetches live university data every 10 seconds using foreground services and show it to the user.|
 
