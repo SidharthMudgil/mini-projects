@@ -1,6 +1,6 @@
-# Taapmaan-TempConverter
+# Taapmaan App
 
-- A new Flutter project for Temperature Converter
+- A new Flutter project for Temperature Converter.
 
 - You can convert from Celsius/Fahrenheit/Kelvin to Fahrenheit/Celsius/Kelvin
 
