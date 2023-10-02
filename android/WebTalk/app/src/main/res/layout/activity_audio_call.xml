@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greenPrimary"
+    tools:context=".ui.audioCall">
+
+    <ImageView
+        android:id="@+id/cutCall"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="170dp"
+        android:background="@drawable/round_button"
+        android:backgroundTint="@color/red"
+        android:padding="20dp"
+        android:src="@android:drawable/sym_call_missed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_text"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@android:drawable/stat_notify_missed_call"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/user_name_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Username"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/callType" />
+
+    <TextView
+        android:id="@+id/timeCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:text="00:00:00"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/user_name_text" />
+
+    <TextView
+        android:id="@+id/callType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Audio calling"
+        android:textColor="@color/white"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/user_name_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
