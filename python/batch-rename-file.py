@@ -1,13 +1,17 @@
 import os
-root = os.getcwd()
-for file in os.listdir('.'):
-   if not os.path.isfile(file):
-       continue
+import re
 
-   head, tail = os.path.splitext(file)
-   if not tail:
-       src = os.path.join(root, file)
-       dst = os.path.join(root, file + '.png')
+def rename_files(directory):
+    for filename in os.listdir(directory):
+        if filename.endswith(".ttf"):
+            base, extension = os.path.splitext(filename)
+            base = re.sub(r"(?!^)(?<!_)([A-Z])", r"_\1", base)
+            base = base.replace("-", "_")
+            base = base.lower()
+            base = base.replace("__", '_')
+            new_filename = f"{base}{extension}"
+            os.rename(os.path.join(directory, filename), os.path.join(directory, new_filename))
 
-       if not os.path.exists(dst): # check if the file doesn't exist
-           os.rename(src, dst)
+
+directory = input("Enter the directory path: ")
+rename_files(directory)
