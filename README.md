@@ -16,13 +16,6 @@ This repository is a carefully curated collection of mini project ideas and reso
 ## Contribution
 1. Fork this repository.
 2. Clone your forked repository to your local machine.
-3. Make the necessary changes following the guidelines.
+3. Make the necessary changes following the [guidelines](./CONTRIBUTING.md).
 4. Push your changes to your fork on GitHub.
 5. Create a pull request from your fork to this repository.
-
-### Guidelines
-- If you have a project to add, navigate to the respective directory for example `cpp`.
-- Inside the `cpp` directory, create a new subdirectory for your project.
-- Place all relevant files for your C++ project within this subdirectory.
-- Update the documentation within the `cpp` directory following existing format.
-- Please follow exisiting naming convention for files
