@@ -2,10 +2,8 @@
 Below are some android based mini projects based on various domain.
 
 ## Table of Contents
-- [Android Mini Projects](#android-mini-projects)
-  - [Table of Contents](#table-of-contents)
-  - [Projects](#projects)
-  - [Installation](#installation)
+- [Projects](#projects)
+- [Installation](#installation)
 
 ## Projects
 | Name | Description |
