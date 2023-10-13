@@ -16,3 +16,4 @@ Below are some Machine Learning projects.
 |[Sentiment Analysis](./sentiment-analysis/)|This is a Python code that trains a neural network model to classify movie reviews as positive or negative.|
 |[Medical Cost Prediction](./medical_costs/)|This is a Python code that trains a neural network model to predict medical costs.|
 |[Disease Predictor](./Disease_Predictor/)|This is a Python code that trains a Naive-bayes, Random-forest, SVM model to predict Diseases.|
+|[Stock Price Prediction](./stock_price_prediction/)|This is a Python code that trains a Linear Regression model to predict Stock market Prices.|
