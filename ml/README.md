@@ -17,3 +17,4 @@ Below are some Machine Learning projects.
 |[Medical Cost Prediction](./medical_costs/)|This is a Python code that trains a neural network model to predict medical costs.|
 |[Disease Predictor](./Disease_Predictor/)|This is a Python code that trains a Naive-bayes, Random-forest, SVM model to predict Diseases.|
 |[Spam Detector Message App](./Spam_Detector_Message_App/)|This is a Python code that trains a Naive-bayes model to predict whether a message is spam or not and integrated using Flask.
+|[Stock Price Prediction](./stock_price_prediction/)|This is a Python code that trains a Linear Regression model to predict Stock market Prices.|
