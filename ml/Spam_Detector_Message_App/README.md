@@ -23,7 +23,7 @@ Run all commands
 * Hurray! That's it.
 
 ## Result
-
-![Input](</images/Screenshot (408).png>) ![Output](</images/Screenshot (409).png>)
+| ![Input](https://github.com/SidharthMudgil/mini-projects/blob/main/ml/Spam_Detector_Message_App/images/Screenshot%20(408).png) | ![Output](https://github.com/SidharthMudgil/mini-projects/blob/main/ml/Spam_Detector_Message_App/images/Screenshot%20(409).png) |
+| ----- | ------ |
 
 
