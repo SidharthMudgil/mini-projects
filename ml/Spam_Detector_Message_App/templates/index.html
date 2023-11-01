@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Machine Learning App</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="static\style.css">
+</head>
+<body>
+
+	<!-- <header>
+		<div class="container">
+		<div id="brandname">
+			Machine Learning App
+		</div>
+		<h2>Spam Detector for Messages</h2>
+		
+	</div>
+	</header>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your Message Here</p>
+		<input type="text" name="comment"/> -->
+		<!-- <textarea name="message" rows="4" cols="50"></textarea>
+		<br/>
+
+        
+		
+	</form>
+		
+	</div> -->
+
+	<section>
+		<div class="colour"></div>
+		<div class="colour"></div>
+		<div class="colour"></div>
+		<div class="box">
+			<div class="square" style="--i: 0"></div>
+			<div class="square" style="--i: 1"></div>
+			<div class="square" style="--i: 2"></div>
+			<div class="square" style="--i: 3"></div>
+			<div class="square" style="--i: 4"></div>
+			<div class="container">
+				<div class="form">
+					<h2>Machine Learning App</h2>
+					<h2>Spam Detection For Messages</h2>
+					<form action="{{ url_for('predict')}}" method="POST">
+						
+						<div class="input__box">
+							<textarea name = "message" rows="4" cols="50" placeholder="Enter Your Message Here"></textarea>
+						</div>
+						<div class="input__box">
+							<input type="submit" value="Predict" />
+						</div>
+
+						
+	
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+</body>
+</html>

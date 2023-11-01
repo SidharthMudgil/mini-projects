@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Machine Learning App</title>
+<link rel="stylesheet" href="static\sample.css" />
+</head>
+<body>
+<section>
+    <div class="colour"></div>
+    <div class="colour"></div>
+    <div class="colour"></div>
+    <div class="box">
+
+        <div class="container">
+            <div class="center">
+				<h2>Machine Learning App</h2>
+                <h2>Spam Detection For Messages</h2>
+             
+                    
+                    <div class="header">
+                       <h3>Prediction Result</h3>
+                    </div>
+                    <div class="header">
+						{% if prediction == 1%}
+						<h3 style="color:red;">Spam</h3>
+						{% elif prediction == 0%}
+						<h3 style="color:blue;">Not a Spam (It is a Ham)</h3>
+						{% endif %}
+					 </div>
+
+              
+            </div>
+        </div>
+    </div>
+</section>
+<script src="app.js"></script>
+</body>
+</html>
