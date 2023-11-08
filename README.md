@@ -11,7 +11,7 @@ This repository is a carefully curated collection of mini project ideas and reso
 - [Java](./java/README.md)
 - [Python](./python/README.md)
 - [C++](./cpp/README.md)
-- [Machine Learning](./ml/README.md)
+- [AI/ML](./ml/README.md)
 
 ## Contribution
 1. Fork this repository.
