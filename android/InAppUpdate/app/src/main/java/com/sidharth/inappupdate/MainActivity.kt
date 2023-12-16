@@ -27,9 +27,11 @@ class MainActivity : AppCompatActivity() {
             RESULT_OK -> {
                 Log.d("Update flow result", "OKAY ${result.resultCode}")
             }
+
             RESULT_CANCELED -> {
                 Log.d("Update flow result", "CANCELLED ${result.resultCode}")
             }
+
             RESULT_IN_APP_UPDATE_FAILED -> {
                 Log.d("Update flow result", "FAILED ${result.resultCode}")
             }
@@ -59,13 +61,22 @@ class MainActivity : AppCompatActivity() {
                 InstallStatus.DOWNLOADING -> {
                     val bytesDownloaded = state.bytesDownloaded()
                     val totalBytesToDownload = state.totalBytesToDownload()
-                    Log.d("Download Percentage", "${bytesDownloaded / totalBytesToDownload * 100}% downloaded")
+                    Log.d(
+                        "Download Percentage",
+                        "${bytesDownloaded / totalBytesToDownload * 100}% downloaded"
+                    )
                 }
+
                 InstallStatus.DOWNLOADED -> {
                     popupSnackbarForCompleteUpdate()
                 }
+
                 InstallStatus.INSTALLED -> {
                     appUpdateManager.unregisterListener(installStateUpdatedListener)
+                }
+
+                else -> {
+
                 }
             }
         }
@@ -77,14 +88,16 @@ class MainActivity : AppCompatActivity() {
         appUpdateInfoTask.addOnSuccessListener { appUpdateInfo ->
             when {
                 appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
-                && (appUpdateInfo.clientVersionStalenessDays() ?: -1) >= DAYS_FOR_FLEXIBLE_UPDATE -> {
+                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
+                        && (appUpdateInfo.clientVersionStalenessDays()
+                    ?: -1) >= DAYS_FOR_FLEXIBLE_UPDATE -> {
                     startImmediateUpdate()
                 }
 
                 appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
-                && (appUpdateInfo.clientVersionStalenessDays() ?: -1) >= DAYS_FOR_FLEXIBLE_UPDATE -> {
+                        && appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE)
+                        && (appUpdateInfo.clientVersionStalenessDays()
+                    ?: -1) >= DAYS_FOR_FLEXIBLE_UPDATE -> {
                     startFlexibleUpdate()
                 }
             }
