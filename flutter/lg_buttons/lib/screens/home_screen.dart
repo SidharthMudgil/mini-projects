@@ -1,12 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:lg_buttons/constants/constants.dart';
 import 'package:lg_buttons/screens/connection_screen.dart';
+import 'package:lg_buttons/service/lg_service.dart';
 import 'package:lg_buttons/widgets/lg_button.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   static const route = "/";
 
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final functions = [
+    LGService.instance?.rebootLG(),
+    LGService.instance?.moveToHomeCity(),
+    LGService.instance?.moveOrbitMyCity(),
+    LGService.instance?.showBubble(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +49,9 @@ class HomeScreen extends StatelessWidget {
           return SizedBox(
             child: LGButton(
               label: Constants.labels[index],
-              onPressed: () {},
+              onPressed: () {
+                functions[index];
+              },
               color: Constants.lgColors[index],
             ),
           );
