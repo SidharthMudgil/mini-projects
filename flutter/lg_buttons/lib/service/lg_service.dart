@@ -81,7 +81,8 @@ class LGService {
 
   Future<bool> moveToHomeCity() async {
     try {
-      const query = "";
+      const query =
+          'echo "flytoview=<LookAt><longitude>${120}</longitude><latitude>${21}</latitude><range>${10}</range><tilt>${0}</tilt><heading>${0}</heading><gx:altitudeMode>relativeToGround</gx:altitudeMode></LookAt>" > /tmp/query.txt';
       return await _execute(query);
     } catch (e) {
       return false;

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../constants/constants.dart';
+
 class InputField extends StatefulWidget {
   final String label;
   final String hint;
@@ -39,7 +41,7 @@ class _InputFieldState extends State<InputField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 350,
+      width: double.infinity,
       height: 60,
       child: TextField(
         controller: widget.controller,
@@ -82,10 +84,10 @@ class _InputFieldState extends State<InputField> {
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(50),
-            borderSide: const BorderSide(color: Color.fromARGB(255, 159, 202, 255)),
+            borderSide: const BorderSide(color: Constants.blue100),
           ),
           floatingLabelStyle: const TextStyle(
-            color: Color.fromARGB(255, 159, 202, 255),
+            color: Constants.blue100,
             fontWeight: FontWeight.w600,
           ),
         ),
