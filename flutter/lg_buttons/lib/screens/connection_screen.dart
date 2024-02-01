@@ -49,14 +49,6 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
           },
           icon: const Icon(Icons.arrow_back),
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              Navigator.of(context).pushNamed(ConnectionScreen.route);
-            },
-            icon: const Icon(Icons.connected_tv_rounded),
-          ),
-        ],
       ),
       body: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -157,7 +149,7 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w700,
-                          color: Constants.blue200,
+                        color: Constants.blue200,
                       ),
                     ),
                   ),
@@ -179,7 +171,7 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
 
   Future<void> _connectToLiquidGalaxy() async {
     if (!_isValidData()) {
-      showSnackBar("empty data");
+      showSnackBar("Invalid Data");
       return;
     }
 
@@ -194,8 +186,12 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
     final result = await lgService.connect();
     if (result) {
       _isConnected();
+      setState(() {
+        _connected = true;
+      });
       showSnackBar("successful");
     } else {
+      _connected = false;
       _isConnected();
       showSnackBar("failed");
     }
