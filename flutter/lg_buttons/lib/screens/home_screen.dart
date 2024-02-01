@@ -14,13 +14,6 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final functions = [
-    LGService.instance?.rebootLG(),
-    LGService.instance?.moveToHomeCity(),
-    LGService.instance?.moveOrbitMyCity(),
-    LGService.instance?.showBubble(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +43,46 @@ class _HomeScreenState extends State<HomeScreen> {
             child: LGButton(
               label: Constants.labels[index],
               onPressed: () {
-                functions[index];
+                switch (index) {
+                  case 0:
+                    {
+                      final snackbar = SnackBar(
+                        content: const Text(
+                          "Please confirm before proceeding!",
+                          style: TextStyle(
+                            color: Constants.blue200,
+                            fontSize: 16
+                          ),
+                        ),
+                        action: SnackBarAction(
+                          label: "Confirm",
+                          onPressed: () {
+                            LGService.instance?.rebootLG();
+                          },
+                          textColor: Colors.white,
+                          backgroundColor: Constants.blue200,
+                        ),
+                        backgroundColor: Constants.blue100,
+                      );
+                      ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                      break;
+                    }
+                  case 1:
+                    {
+                      LGService.instance?.moveToHomeCity();
+                      break;
+                    }
+                  case 2:
+                    {
+                      LGService.instance?.moveOrbitMyCity();
+                      break;
+                    }
+                  case 3:
+                    {
+                      LGService.instance?.showBubble();
+                      break;
+                    }
+                }
               },
               color: Constants.lgColors[index],
             ),
