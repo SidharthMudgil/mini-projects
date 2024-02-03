@@ -17,38 +17,8 @@ class LGService {
     }
   }
 
-  String get _dataBalloon {
-    return '''<?xml version="1.0" encoding="UTF-8"?>
-    <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
-    <Document>
-    <name>Weather Data</name>
-    <Style id="weather_style">
-    <BalloonStyle>
-    <textColor>ffffffff</textColor>
-    <text>
-    <h1>Sidharth Mudgil</h1>
-    <h2>Jhajjar, Haryana</h2>
-    </text>
-    <bgColor>ff15151a</bgColor>
-    </BalloonStyle>
-    </Style>
-    <Placemark id="ww">
-    <description>
-    </description>
-    <LookAt>
-    <longitude>${12}</longitude>
-    <latitude>${2}</latitude>
-    <heading>${1}</heading>
-    <tilt>${10}</tilt>
-    <range>${1}</range>
-    </LookAt>
-    <styleUrl>#weather_style</styleUrl>
-    <gx:balloonVisibility>1</gx:balloonVisibility>
-    <Point>
-    </Point>
-    </Placemark>
-    </Document>
-    </kml>''';
+  String get _lookAt {
+    return "<LookAt><longitude>${76.6084}</longitude><latitude>${28.8958}</latitude><range>${3000}</range><tilt>${0}</tilt><heading>${0}</heading><gx:altitudeMode>relativeToGround</gx:altitudeMode></LookAt>";
   }
 
   factory LGService({
@@ -123,9 +93,7 @@ class LGService {
 
   Future<bool> moveToHomeCity() async {
     try {
-      const query =
-          'echo "flytoview=<LookAt><longitude>${120}</longitude><latitude>${21}</latitude><range>${10}</range><tilt>${0}</tilt><heading>${0}</heading><gx:altitudeMode>relativeToGround</gx:altitudeMode></LookAt>" > /tmp/query.txt';
-      return await _execute(query);
+      return await _execute('echo "flytoview=$_lookAt" > /tmp/query.txt');
     } catch (e) {
       return false;
     }
@@ -143,8 +111,29 @@ class LGService {
 
   Future<bool> showBubble() async {
     try {
-      final query = "echo '$_dataBalloon' > /var/www/html/kml/$_dataSlave.kml";
-      return await _execute(query);
+      const image = '''<kml xmlns="http://www.opengis.net/kml/2.2" 
+    xmlns:atom="http://www.w3.org/2005/Atom"
+    xmlns:gx="http://www.google.com/kml/ext/2.2">
+    <Document>
+        <name>LG Buttons</name>
+        <Folder>
+            <name>Logo</name>
+            <ScreenOverlay>
+                <name>Logo</name>
+                <html><![CDATA[
+                    <h1>Sidharth Mudgil</h1>
+                    <h2>Rohtak, Haryana</h2>
+                ]]></html>
+                <overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+                <screenXY x="0.02" y="0.95" xunits="fraction" yunits="fraction"/>
+                <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+                <size x="0.3" y="0.3" xunits="fraction" yunits="fraction"/>
+            </ScreenOverlay>
+        </Folder>
+    </Document>
+</kml>''';
+      return await _execute(
+          "chmod 777 /var/www/html/kml/$_dataSlave.kml; echo '$image' > /var/www/html/kml/$_dataSlave.kml");
     } catch (e) {
       return false;
     }
@@ -153,10 +142,10 @@ class LGService {
   Future<bool> rebootLG() async {
     try {
       bool res = true;
-      for (var i = 1; i <= _slaves; i++) {
+      for (var i = _slaves; i >= 1; i--) {
         res = res &&
             await _execute(
-                'sshpass -p $_password ssh -t lg$i "echo $_password | sudo -S reboot');
+                'sshpass -p $_password ssh -t lg$i "echo $_password | sudo -S reboot"');
       }
       return res;
     } catch (error) {
