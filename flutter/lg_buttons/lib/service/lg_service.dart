@@ -1,3 +1,4 @@
+import 'package:lg_buttons/service/kml_helper.dart';
 import 'package:ssh2/ssh2.dart';
 
 class LGService {
@@ -101,9 +102,10 @@ class LGService {
 
   Future<bool> moveOrbitMyCity() async {
     try {
-      const query = 'echo "playtour=Orbit" > /tmp/query.txt';
-      // const query = 'echo "flytoview=${}" > /tmp/query.txt';
-      return await _execute(query);
+      moveToHomeCity();
+      await _execute("echo '${orbit()}' > /var/www/html/homecity.kml");
+      await  _execute('echo "http://lg1:81/homecity.kml" >> /var/www/html/kmls.txt');
+      return await _execute("echo 'playtour=Orbit' > /tmp/query.txt");
     } catch (e) {
       return false;
     }
@@ -111,29 +113,7 @@ class LGService {
 
   Future<bool> showBubble() async {
     try {
-      const image = '''<kml xmlns="http://www.opengis.net/kml/2.2" 
-    xmlns:atom="http://www.w3.org/2005/Atom"
-    xmlns:gx="http://www.google.com/kml/ext/2.2">
-    <Document>
-        <name>LG Buttons</name>
-        <Folder>
-            <name>Logo</name>
-            <ScreenOverlay>
-                <name>Logo</name>
-                <html><![CDATA[
-                    <h1>Sidharth Mudgil</h1>
-                    <h2>Rohtak, Haryana</h2>
-                ]]></html>
-                <overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
-                <screenXY x="0.02" y="0.95" xunits="fraction" yunits="fraction"/>
-                <rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
-                <size x="0.3" y="0.3" xunits="fraction" yunits="fraction"/>
-            </ScreenOverlay>
-        </Folder>
-    </Document>
-</kml>''';
-      return await _execute(
-          "chmod 777 /var/www/html/kml/$_dataSlave.kml; echo '$image' > /var/www/html/kml/$_dataSlave.kml");
+      return await _execute("echo '${balloon()}' > /var/www/html/kml/$_dataSlave.kml");
     } catch (e) {
       return false;
     }
