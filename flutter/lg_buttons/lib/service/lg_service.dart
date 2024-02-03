@@ -9,6 +9,48 @@ class LGService {
   int _port;
   int _slaves;
 
+  String get _dataSlave {
+    if (_slaves == 1) {
+      return "slave_1";
+    } else {
+      return "slave_${(_slaves / 2) + 1}";
+    }
+  }
+
+  String get _dataBalloon {
+    return '''<?xml version="1.0" encoding="UTF-8"?>
+    <kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+    <Document>
+    <name>Weather Data</name>
+    <Style id="weather_style">
+    <BalloonStyle>
+    <textColor>ffffffff</textColor>
+    <text>
+    <h1>Sidharth Mudgil</h1>
+    <h2>Jhajjar, Haryana</h2>
+    </text>
+    <bgColor>ff15151a</bgColor>
+    </BalloonStyle>
+    </Style>
+    <Placemark id="ww">
+    <description>
+    </description>
+    <LookAt>
+    <longitude>${12}</longitude>
+    <latitude>${2}</latitude>
+    <heading>${1}</heading>
+    <tilt>${10}</tilt>
+    <range>${1}</range>
+    </LookAt>
+    <styleUrl>#weather_style</styleUrl>
+    <gx:balloonVisibility>1</gx:balloonVisibility>
+    <Point>
+    </Point>
+    </Placemark>
+    </Document>
+    </kml>''';
+  }
+
   factory LGService({
     required String host,
     required int port,
@@ -91,7 +133,8 @@ class LGService {
 
   Future<bool> moveOrbitMyCity() async {
     try {
-      const query = "";
+      const query = 'echo "playtour=Orbit" > /tmp/query.txt';
+      // const query = 'echo "flytoview=${}" > /tmp/query.txt';
       return await _execute(query);
     } catch (e) {
       return false;
@@ -100,7 +143,7 @@ class LGService {
 
   Future<bool> showBubble() async {
     try {
-      const query = "";
+      final query = "echo '$_dataBalloon' > /var/www/html/kml/$_dataSlave.kml";
       return await _execute(query);
     } catch (e) {
       return false;
