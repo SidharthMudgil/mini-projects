@@ -104,6 +104,7 @@ class LGService {
 
   Future<bool> showBubble() async {
     try {
+      moveToHomeCity();
       await _execute("echo '${balloon()}' > /var/www/html/bubble.kml");
       await  _execute('echo "http://lg1:81/bubble.kml" >> /var/www/html/kmls.txt');
       return true;
