@@ -55,106 +55,109 @@ class _ConnectionScreenState extends State<ConnectionScreen> {
         children: [
           SizedBox(
             width: 450,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                const SizedBox(height: 16),
-                const Text(
-                  'Establish connection with LG',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  _connected ? 'Connected' : 'Disconnected',
-                  style: TextStyle(
-                    color: _connected ? Colors.green : Colors.red,
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 28),
-                InputField(
-                  label: "Username",
-                  hint: "lg",
-                  controller: userController,
-                  type: TextInputType.name,
-                  prefixIcon: Icons.person_rounded,
-                ),
-                const SizedBox(height: 16),
-                InputField(
-                  label: "Password",
-                  hint: "lg",
-                  controller: passController,
-                  type: TextInputType.visiblePassword,
-                  prefixIcon: Icons.key_rounded,
-                  suffixIcons: const [
-                    Icons.visibility_rounded,
-                    Icons.visibility_off_rounded,
-                  ],
-                ),
-                const SizedBox(height: 16),
-                InputField(
-                  label: "IP Address",
-                  hint: "192.168.0.1",
-                  controller: ipController,
-                  type: TextInputType.phone,
-                  prefixIcon: Icons.router_rounded,
-                ),
-                const SizedBox(height: 16),
-                InputField(
-                  label: "Port Number",
-                  hint: "22",
-                  controller: portController,
-                  type: TextInputType.number,
-                  prefixIcon: Icons.account_tree_rounded,
-                ),
-                const SizedBox(height: 28),
-                Slider(
-                  value: _slaves,
-                  min: 3,
-                  max: 7,
-                  divisions: 4,
-                  label: "${_slaves.toInt()}",
-                  onChanged: (newValue) {
-                    setState(() {
-                      _slaves = newValue;
-                    });
-                  },
-                  inactiveColor: Constants.blue100,
-                  activeColor: Constants.blue200,
-                  thumbColor: Constants.blue200,
-                ),
-                const SizedBox(height: 28),
-                Align(
-                  alignment: Alignment.center,
-                  child: FilledButton(
-                    onPressed: _connectToLiquidGalaxy,
-                    style: FilledButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 20,
-                        horizontal: 24,
-                      ),
-                      backgroundColor: Constants.blue100,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50),
-                      ),
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const SizedBox(height: 16),
+                  const Text(
+                    'Establish connection with LG',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
                     ),
-                    child: Text(
-                      _connected ? disconnect : connect,
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        color: Constants.blue200,
-                      ),
+                    textAlign: TextAlign.center,
+                  ),
+                  const SizedBox(height: 8),
+                  Text(
+                    _connected ? 'Connected' : 'Disconnected',
+                    style: TextStyle(
+                      color: _connected ? Colors.green : Colors.red,
+                      fontSize: 28,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
-                )
-              ],
+                  const SizedBox(height: 28),
+                  InputField(
+                    label: "Username",
+                    hint: "lg",
+                    controller: userController,
+                    type: TextInputType.name,
+                    prefixIcon: Icons.person_rounded,
+                  ),
+                  const SizedBox(height: 16),
+                  InputField(
+                    label: "Password",
+                    hint: "lg",
+                    controller: passController,
+                    type: TextInputType.visiblePassword,
+                    prefixIcon: Icons.key_rounded,
+                    suffixIcons: const [
+                      Icons.visibility_rounded,
+                      Icons.visibility_off_rounded,
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  InputField(
+                    label: "IP Address",
+                    hint: "192.168.0.1",
+                    controller: ipController,
+                    type: TextInputType.phone,
+                    prefixIcon: Icons.router_rounded,
+                  ),
+                  const SizedBox(height: 16),
+                  InputField(
+                    label: "Port Number",
+                    hint: "22",
+                    controller: portController,
+                    type: TextInputType.number,
+                    prefixIcon: Icons.account_tree_rounded,
+                  ),
+                  const SizedBox(height: 28),
+                  Slider(
+                    value: _slaves,
+                    min: 3,
+                    max: 7,
+                    divisions: 4,
+                    label: "${_slaves.toInt()}",
+                    onChanged: (newValue) {
+                      setState(() {
+                        _slaves = newValue;
+                      });
+                    },
+                    inactiveColor: Constants.blue100,
+                    activeColor: Constants.blue200,
+                    thumbColor: Constants.blue200,
+                  ),
+                  const SizedBox(height: 28),
+                  Align(
+                    alignment: Alignment.center,
+                    child: FilledButton(
+                      onPressed: _connectToLiquidGalaxy,
+                      style: FilledButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(
+                          vertical: 20,
+                          horizontal: 24,
+                        ),
+                        backgroundColor: Constants.blue100,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50),
+                        ),
+                      ),
+                      child: Text(
+                        _connected ? disconnect : connect,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w700,
+                          color: Constants.blue200,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ],

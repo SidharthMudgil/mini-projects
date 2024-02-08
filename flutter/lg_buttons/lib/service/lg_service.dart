@@ -94,8 +94,8 @@ class LGService {
 
   Future<bool> moveOrbitMyCity() async {
     try {
-      await _execute("echo '${orbit()}' > /var/www/html/homecity.kml");
-      await  _execute('echo "http://lg1:81/homecity.kml" >> /var/www/html/kmls.txt');
+      await _execute("echo '${orbit()}' > /var/www/html/orbitcity.kml");
+      await  _execute('echo "http://lg1:81/orbitcity.kml" >> /var/www/html/kmls.txt');
       return await _execute("echo 'playtour=Orbit' > /tmp/query.txt");
     } catch (e) {
       return false;
