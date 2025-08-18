@@ -21,8 +21,6 @@ This repository is a carefully curated collection of mini project ideas and reso
 4. Push your changes to your fork on GitHub.
 5. Create a pull request from your fork to this repository.
 
-## Contributors
-
 <!-- CONTRIBUTORS:START -->
 ## ✨ Contributors
 
