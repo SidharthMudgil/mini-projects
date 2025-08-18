@@ -4,6 +4,7 @@ This repository is a carefully curated collection of mini project ideas and reso
 ## Table of Contents
 - [Projects](#projects)
 - [Contribution](#contribution)
+- [Contributors](#contributors)
 
 ## Projects
 - [Android](./android/README.md)
@@ -19,3 +20,8 @@ This repository is a carefully curated collection of mini project ideas and reso
 3. Make the necessary changes following the [guidelines](./CONTRIBUTING.md).
 4. Push your changes to your fork on GitHub.
 5. Create a pull request from your fork to this repository.
+
+## Contributors
+
+<!-- CONTRIBUTORS:START -->
+<!-- CONTRIBUTORS:END -->
