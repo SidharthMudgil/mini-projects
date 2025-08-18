@@ -32,7 +32,7 @@ https.get(options, res => {
         `[<img src="${user.avatar_url}" width="50px;" alt="${user.login}"/>](https://github.com/${user.login})`
       ).join(' ');
 
-      const grid = `Made with ❤️ by awesome people.`;
+      const grid = `## Contributors\n\n${markdown}\n\nMade with ❤️ by awesome people.`;
 
       const readmePath = path.resolve(__dirname, 'README.md');
       let readme = fs.readFileSync(readmePath, 'utf8');
