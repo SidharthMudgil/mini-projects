@@ -36,6 +36,7 @@ Below are some android based mini projects based on various domain.
 |[WebTalk](./WebTalk/)| WebTalk is an Android app for Video & Audio using WebRTC where people can talk over video/audio from anywhere for free, also receive call notification.
 |[World Trivia](./WorldTrivia/)|This app asks users about different trivia related to different part of the world.|
 |[Vidya Khoj](./VidyaKhoj/)|This app uses fetches live university data every 10 seconds using foreground services and show it to the user.|
+|[Todo List App](./ToDoList/)|This is a basic todo list app with very basic featues where we can add remove and check tasks.|
 
 
 ## Installation
